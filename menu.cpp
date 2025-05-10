@@ -11,10 +11,21 @@ void inputArr(int Arr[]){
   cin >> lenArr;
   for (int i = 0; i < lenArr; i++)
   {
-    cout << "Masukkan nilai array ke - " << i << ": ";
+    cout << "\nMasukkan nilai array ke - " << i << ": ";
     cin >> Arr[i];
   }
-  
+  cout << "\n\n\nTekan apa saja untuk melanjutkan....";
+  getch();
+}
+
+void printArr(int Arr[]){
+  system("cls");
+  for (int i = 0; i < lenArr; i++)
+  {
+    cout << Arr[i] << ' ';
+  }
+  cout << "\n\n\nTekan apa saja untuk melanjutkan....";
+  getch();
 }
 
 void Info(){
@@ -25,6 +36,7 @@ void Info(){
   cout << "\tNama \t: Hipni" << endl;
   cout << "\tNim \t: C030324071" << endl;
   cout << "\tKelas \t: TI - 2B" << endl;
+  cout << "\n\n\nTekan apa saja untuk melanjutkan....";
   getch();
 }
 
@@ -56,12 +68,10 @@ int main() {
     switch (pl)
     {
     case '1':
-      /* code */
       inputArr(Arr);
       break;
     case '2':
-      mPertama("ke- dua");
-      /* code */ 
+      printArr(Arr);
       break;  
     case '3':
       mPertama("ke- tiga");
