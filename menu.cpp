@@ -19,11 +19,35 @@ void inputArr(int Arr[]){
 }
 
 void printArr(int Arr[]){
-  system("cls");
   for (int i = 0; i < lenArr; i++)
   {
     cout << Arr[i] << ' ';
   }
+}
+
+void insertionSort(int Arr[]){
+  int temp;
+  for (int i = 1; i < lenArr; i++)
+  {
+    int temp = Arr[i];
+    int j = i -1;
+    while (Arr[j] > temp && j >= 0)
+    {
+      Arr[j+1] = Arr[j];
+      j--;
+    }
+    Arr[j+1] = temp;
+  } 
+}
+
+void urutArr(int Arr[]){
+  system("cls");
+  cout << "\t\t==== Pengurutan Data(ASC) ====\n\n";
+  cout << "Data Sebelum diurutkan : ";
+  printArr(Arr);
+  insertionSort(Arr);
+  cout << "\nData Setelah diurutkan : ";
+  printArr(Arr);
   cout << "\n\n\nTekan apa saja untuk melanjutkan....";
   getch();
 }
@@ -51,30 +75,26 @@ void dMenu(){
   cout<<"Masukan angka :";        
 }
 
-void mPertama(string pesan){
-  system("cls");
-  cout<<"hallo saya menu "<<pesan;
-  getch();
-}
-
-
 int main() {
   char pl;
-  int Arr[lenArr];
+  int DataArr[lenArr];
   do
   {
-      dMenu();
-      pl=getch();
+    dMenu();
+    pl=getch();
     switch (pl)
     {
     case '1':
-      inputArr(Arr);
+      inputArr(DataArr);
       break;
     case '2':
-      printArr(Arr);
+      system("cls");
+      printArr(DataArr);
+      cout << "\n\n\nTekan apa saja untuk melanjutkan....";
+      getch();
       break;  
     case '3':
-      mPertama("ke- tiga");
+      urutArr(DataArr);
       /* code */
       break;  
     case '4':
@@ -94,5 +114,5 @@ int main() {
 
 
   } while (pl!='5');
-    return 0;
+  return 0;
 }
