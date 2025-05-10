@@ -2,6 +2,21 @@
 #include <conio.h>
 using namespace std;
 
+int lenArr = 0;
+
+void inputArr(int Arr[]){
+  system("cls");
+  cout << "\t\t ===== Input Array =====" << "\n\n";
+  cout << "Panjang Array : ";
+  cin >> lenArr;
+  for (int i = 0; i < lenArr; i++)
+  {
+    cout << "Masukkan nilai array ke - " << i << ": ";
+    cin >> Arr[i];
+  }
+  
+}
+
 void Info(){
   system("cls");
   cout << "\t===== Project UTS =====" << endl;
@@ -33,6 +48,7 @@ void mPertama(string pesan){
 
 int main() {
   char pl;
+  int Arr[lenArr];
   do
   {
       dMenu();
@@ -41,7 +57,7 @@ int main() {
     {
     case '1':
       /* code */
-      mPertama("pertama");
+      inputArr(Arr);
       break;
     case '2':
       mPertama("ke- dua");
